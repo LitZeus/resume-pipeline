@@ -1,4 +1,5 @@
-# 📄 Resume – Tejas Athalye
+# 📄 Automated Resume Updation
+## Resume – Tejas Athalye
 
 This repository contains the LaTeX source code for my professional resume. It is automatically compiled and deployed to GitHub Pages using GitHub Actions.
 
