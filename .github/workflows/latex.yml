@@ -1,4 +1,4 @@
-name: Build and Deploy LaTeX Resume (TinyTeX)
+name: Build and Deploy LaTeX Resume
 
 on:
   push:
@@ -10,26 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Install TinyTeX (Minimal LaTeX)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wget
-          wget -qO- "https://yihui.org/tinytex/install-unx.sh" | sh
-          echo "::add-path::${HOME}/bin"
-
-      - name: Compile LaTeX
-        run: |
-          mkdir -p output
-          ~/.TinyTeX/bin/*/pdflatex -interaction=nonstopmode -output-directory=output resume.tex
-
-      - name: Copy PDF to root for deploy
-        run: cp output/resume.pdf .
-
-      - name: Deploy PDF to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Compile LaTeX using latex-action
+        uses: xu-cheng/latex-action@v2
         with:
-          branch: gh-pages
-          folder: ./
+          root_file: resume.tex
+
+      - name: Copy output to gh-pages folder
+        run: |
+          mkdir public
+          cp resume.pdf public/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
