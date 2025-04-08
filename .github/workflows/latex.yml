@@ -1,9 +1,9 @@
-name: Build and Deploy LaTeX Resume
+name: Build and Deploy LaTeX Resume (TinyTeX)
 
 on:
   push:
     branches:
-      - main  # Or your default branch
+      - main
 
 jobs:
   build:
@@ -13,15 +13,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install TeX Live
-        run: sudo apt-get update && sudo apt-get install -y texlive-full
+      - name: Install TinyTeX (Minimal LaTeX)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget
+          wget -qO- "https://yihui.org/tinytex/install-unx.sh" | sh
+          echo "::add-path::${HOME}/bin"
 
-      - name: Compile LaTeX file
+      - name: Compile LaTeX
         run: |
           mkdir -p output
-          pdflatex -interaction=nonstopmode -output-directory=output resume.tex
+          ~/.TinyTeX/bin/*/pdflatex -interaction=nonstopmode -output-directory=output resume.tex
 
-      - name: Copy only PDF
+      - name: Copy PDF to root for deploy
         run: cp output/resume.pdf .
 
       - name: Deploy PDF to GitHub Pages
@@ -29,5 +33,3 @@ jobs:
         with:
           branch: gh-pages
           folder: ./
-          clean: true
-          single-commit: true
