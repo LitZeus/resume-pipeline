@@ -18,10 +18,10 @@ jobs:
         with:
           root_file: resume.tex
 
-      - name: Copy output to gh-pages folder
+      - name: Rename and copy PDF to gh-pages folder
         run: |
           mkdir public
-          cp resume.pdf public/
+          mv resume.pdf public/Resume_Tejas_Athalye.pdf
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
