@@ -1,0 +1,149 @@
+% !TEX root = resume.tex
+
+%-------------------------
+% Resume in Latex - Tejas M. Athalye
+% Based on Sourabh Bajaj's Template
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{\item\small{\textbf{#1}{: #2 \vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\renewcommand{\labelitemii}{$\circ$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large Tejas Manoj Athalye} & \href{mailto:tejasathalye.nbnstic.comp@gmail.com}{tejasathalye.nbnstic.comp@gmail.com} \\
+  Pune, India & \href{tel:+917666803812}{+91 7666803812} \\
+  \href{https://litzeus.github.io/tejas-athalye-portfolio/}{litzeus.github.io/tejas-athalye-portfolio} & \href{https://github.com/LitZeus}{github.com/LitZeus} \\
+  \href{https://www.linkedin.com/in/tejasathalye/}{linkedin.com/in/tejasathalye}
+\end{tabular*}
+
+%-----------EDUCATION-----------------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {NBN Sinhgad Technical Institutes Campus}{Pune, India}
+    {Bachelors of Engineering in Computer Engineering; CGPA: 7.89}{2021 -- 2025}
+  \resumeSubheading
+    {Sir Parashurambhau Junior College}{Pune, India}
+    {Higher Secondary Education (12th) - Science (Vocational); Percentage: 88\%}{2019 -- 2021}
+  \resumeSubheading
+    {Dnyanadeep English Medium School}{Pune, India}
+    {Secondary School Education (10th); Percentage: 93\%}{2018 -- 2019}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {KasNet Technologies Pvt. Ltd.}{Pune, India}
+    {Cloud Computing \& Project Management Intern}{2023 -- 2024}
+    \resumeItemListStart
+      \resumeItem{Cloud Optimization}{Optimized Azure SQL, improving storage efficiency by 20\%.}
+      \resumeItem{Data Visualization}{Developed Power BI dashboards, increasing data-driven efficiency by 30\%.}
+      \resumeItem{Project Management}{Improved team collaboration by 15\% through Agile methodologies.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------------
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Varicose Veins Detection Using YOLO}{\href{https://github.com/LitZeus/detect-it}{GitHub}}
+    {AI-Powered Medical Diagnosis}{Final Year Project}
+    \resumeItemListStart
+      \resumeItem{Deep Learning Model}{Developed a YOLO-based classification system enhanced with EfficientNet.}
+      \resumeItem{Dataset}{Curated 3,000+ images for training, improving detection accuracy.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {SwipeHire}{In Progress}
+    {AI-Powered Job Matching App}{Personal Project}
+    \resumeItemListStart
+      \resumeItem{Recommendation System}{Leverages resume analysis and engagement metrics for job matching.}
+      \resumeItem{Bidirectional Swiping}{Allows recruiters and candidates to match efficiently.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {NFTix}{\href{https://github.com/LitZeus/NFTix}{GitHub}}
+    {NFT-Based Ticketing Platform}{Unfold Hackathon}
+    \resumeItemListStart
+      \resumeItem{Blockchain Security}{Uses Solidity and IPFS for fraud prevention.}
+      \resumeItem{Smart Contracts}{Enables resale with royalties via smart contracts.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------------
+\section{Technical Skills}
+\resumeSubHeadingListStart
+  \resumeItem{Programming Languages}{Python, Solidity, JavaScript.}
+  \resumeItem{Technologies}{SQL, MongoDB, Web3, Cloud Computing (Azure).}
+  \resumeItem{Frameworks \& Libraries}{React, Vite, NextJS, PyTorch, scikit-learn.}
+  \resumeItem{DevOps \& Tools}{Docker, Kubernetes, CI/CD, Git, Agile Methodologies.}
+\resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------------
+\section{Publications}
+\resumeSubHeadingListStart
+  \resumeItem{Detection of Varicose Veins Using YOLO}{Published in IARJSET, Vol. 11, Issue 10, 2024. \href{https://doi.org/10.17148/IARJSET.2024.111012}{DOI: 10.17148/IARJSET.2024.111012}}
+\resumeSubHeadingListEnd
+
+%-----------CERTIFICATIONS-----------------
+\section{Certifications}
+\resumeSubHeadingListStart
+  \resumeItem{Microsoft Azure Fundamentals (AZ-900)}{\href{https://github.com/LitZeus/certificates/blob/main/Azure_certification.pdf}{Certification Link}}
+  \resumeItem{Google Data Analytics Professional Certificate}{\href{https://github.com/LitZeus/certificates/blob/main/google-data-analytics-cert.pdf}{Certification Link}}
+\resumeSubHeadingListEnd
+
+\end{document}

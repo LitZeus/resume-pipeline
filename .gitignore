@@ -1,0 +1,42 @@
+# Ignore LaTeX temporary files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
+# Output directory (optional if dynamically created)
+output/
+
+# Ignore PDF files
+*.pdf
+# Ignore editor-specific files
+*.swp
+*.swo
+# Ignore LaTeX auxiliary files
+*.bbl
+*.blg
+*.toc
+*.idx
+*.ilg
+*.ind
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+# Ignore bibliography files
+*.bbl
+# Ignore log files
+*.log
+# Ignore temporary files
+*.tmp
+# Ignore cache files
+*.cache
+# Ignore generated files
+*.dvi
+# Ignore backup files
+*.bak

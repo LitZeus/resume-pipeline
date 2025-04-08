@@ -1,0 +1,33 @@
+name: Build and Deploy LaTeX Resume
+
+on:
+  push:
+    branches:
+      - main  # Or your default branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install TeX Live
+        run: sudo apt-get update && sudo apt-get install -y texlive-full
+
+      - name: Compile LaTeX file
+        run: |
+          mkdir -p output
+          pdflatex -interaction=nonstopmode -output-directory=output resume.tex
+
+      - name: Copy only PDF
+        run: cp output/resume.pdf .
+
+      - name: Deploy PDF to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: ./
+          clean: true
+          single-commit: true
