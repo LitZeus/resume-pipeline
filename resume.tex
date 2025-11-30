@@ -18,9 +18,9 @@
 % Margins
 \addtolength{\oddsidemargin}{-0.35in}
 \addtolength{\evensidemargin}{-0.35in}
-\addtolength{\textwidth}{0.7in}
-\addtolength{\topmargin}{-0.4in}
-\addtolength{\textheight}{0.9in}
+\addtolength{\textwidth}{0.9in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.2in}
 
 \urlstyle{same}
 \raggedbottom
@@ -29,8 +29,8 @@
 
 % Section formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+  \vspace{-8pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-8pt}]
 
 % Commands
 \newcommand{\resumeItem}[2]{\item\small{\textbf{#1}: #2}}
@@ -39,25 +39,25 @@
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-6pt}
+    \end{tabular*}\vspace{-8pt}
 }
 \newcommand{\resumeWorkHeading}[3]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1} - \textit{#2} & #3 \\
-    \end{tabular*}\vspace{-6pt}
+    \end{tabular*}\vspace{-7pt}
 }
 \newcommand{\resumeProjectHeading}[3]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1} - \textit{#2} & #3 \\
-    \end{tabular*}\vspace{-6pt}
+    \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,itemsep=2pt]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,itemsep=1pt]}
-\newcommand{\resumeItemListEnd}{\end{itemize}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,itemsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-7pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,itemsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
 
 %-------------------------------------------
 %%%%%%%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%
@@ -67,12 +67,18 @@
 %----------HEADING-----------------
 \begin{center}
   {\Large \textbf{Tejas Manoj Athalye}}\\
-  \vspace{2pt}
+  \vspace{1pt}
   \small Pune, India $|$ \href{tel:+917666803812}{+91 7666803812} $|$ \href{mailto:me.tejasathalye@gmail.com}{me.tejasathalye@gmail.com}\\
   \href{https://tejas-athalye-portfolio.vercel.app/}{Portfolio} $|$
   \href{https://github.com/LitZeus}{GitHub} $|$
   \href{https://www.linkedin.com/in/tejasathalye/}{LinkedIn}
 \end{center}
+\vspace{-10pt}
+
+%-----------SUMMARY-----------------
+\section{Professional Summary}
+\small DevOps Engineer specializing in AWS cloud infrastructure, CI/CD automation, and containerization. Reduced deployment times by 40\% across 15+ microservices and architected scalable production systems using Terraform, Jenkins, and Docker.
+\vspace{-6pt}
 
 %-----------EDUCATION-----------------
 \section{Education}
@@ -103,9 +109,9 @@
 %-----------SKILLS-----------------
 \section{Technical Skills}
 \resumeSubHeadingListStart
-  \item \small \textbf{DevOps \& Cloud:} AWS (EC2, ECS, Fargate, Lambda, RDS, S3, VPC, CloudWatch), Azure, GCP, Linux
+  \item \small \textbf{DevOps \& Cloud:} AWS (IAM, EC2, ECS, Fargate, Lambda, R53, VPC, KMS, CloudWatch), Azure, GCP, Linux
   \item \small \textbf{CI/CD \& IaC:} Jenkins, GitHub Actions, Terraform, Docker, Podman, Kubernetes, Git, Bash
-  \item \small \textbf{Programming:} Python, JavaScript, SQL, MongoDB
+  \item \small \textbf{Programming:} Python, JavaScript, SQL, MongoDB, Solidity
   \item \small \textbf{AI/ML:} PyTorch, Scikit-learn, Pandas, NumPy, FastAPI, MLflow
 \resumeSubHeadingListEnd
 
@@ -127,23 +133,25 @@
     \resumeItemListStart
       \item Built YOLO + EfficientNet hybrid model on 3,000+ annotated images; deployed FastAPI backend with Docker containerization.
     \resumeItemListEnd
+
+  \resumeProjectHeading
+    {NFTix}{NFT-Based Ticketing Platform}
+    {\href{https://github.com/LitZeus/NFTix}{GitHub}}
+    \resumeItemListStart
+      \item Developed blockchain ticketing platform using Solidity smart contracts \& IPFS for fraud prevention; implemented automated resale with royalty distribution.
+    \resumeItemListEnd
 \resumeSubHeadingListEnd
 
-%-----------CERTIFICATIONS-----------------
-\section{Certifications}
+%-----------CERTIFICATIONS & PUBLICATIONS-----------------
+\section{Certifications \& Publications}
 \resumeSubHeadingListStart
-  \item \small AWS Solutions Architect- Associate (Exam Ready) |
-        \href{https://litzeus.github.io/certificates/Azure_certification.pdf}{Microsoft Azure AZ-900} |
-        \href{https://litzeus.github.io/certificates/google-advanced-data-analytics-cert.pdf}{Google Advanced Data Analytics}
+  \item \small \textbf{Certifications:} AWS Solutions Architect- Associate (Exam Ready) | \href{https://litzeus.github.io/certificates/Azure_certification.pdf}{Microsoft Azure AZ-900} | \href{https://litzeus.github.io/certificates/google-advanced-data-analytics-cert.pdf}{Google Advanced Data Analytics} |
+  \href{https://litzeus.github.io/certificates/Google%20Cybersecurity%20Professional%20Certificate.pdf}{Google Cybersecurity}
+  \item \small \textbf{Publication:} Intelligent Detection of Varicose Veins to Enhance Diagnostic Accuracy via AI-Based Image Analysis: IJARSCT, Vol. 5, Issue 10 (2025). \href{https://www.ijarsct.co.in/Paper27118.pdf}{DOI: 10.48175/IJARSCT-27018}
+  
 \resumeSubHeadingListEnd
 
-%-----------PUBLICATIONS-----------------
-\section{Publications}
-\resumeSubHeadingListStart
-  \item \small Intelligent Detection of Varicose Veins via AI— IJARSCT, Vol. 5, Issue 10 (2025). \href{https://www.ijarsct.co.in/Paper27118.pdf}{DOI: 10.48175/IJARSCT-27018}
-\resumeSubHeadingListEnd
-
-%-----------EXTRACURRICULARS-----------------
+%-----------ACHIEVEMENTS-----------------
 \section{Achievements}
 \resumeSubHeadingListStart
   \item \small Winner – OKTO Track at UNFOLD 24 Hackathon, Bengaluru (Built \& deployed MVP in 36 hours)
