@@ -1,3 +1,7 @@
+
+\resumeSubHeadingListEnd
+
+\end{document}
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
@@ -47,12 +51,6 @@
       \textbf{#1} - \textit{#2} & #3 \\
     \end{tabular*}\vspace{-7pt}
 }
-\newcommand{\resumeProjectHeading}[3]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} - \textit{#2} & #3 \\
-    \end{tabular*}\vspace{-7pt}
-}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,itemsep=0pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-7pt}}
@@ -77,7 +75,7 @@
 
 %-----------SUMMARY-----------------
 \section{Professional Summary}
-\small DevOps Engineer specializing in AWS cloud infrastructure, CI/CD automation, and containerization. Reduced deployment times by 40\% across 15+ microservices and architected scalable production systems using Terraform, Jenkins, and Docker.
+\small Solo DevOps Engineer managing end-to-end infrastructure for 10 internal products and one enterprise client engagement across AWS and on-premises environments. Built an internal developer platform from scratch that standardized provisioning, introduced self-service workflows, and eliminated manual infrastructure requests. Reduced AWS spend by 43\% through workload migration and cost governance, and cut a fully manual deployment process down by 83\% via a custom automation framework built under strict enterprise network constraints.
 \vspace{-6pt}
 
 %-----------EDUCATION-----------------
@@ -91,71 +89,61 @@
 %-----------EXPERIENCE-----------------
 \section{Experience}
 \resumeSubHeadingListStart
+
   \resumeWorkHeading
-    {Associate Software Engineer (DevOps)}{Coditas Solutions LLP}{July 2025 -- Present}
+    {Associate DevOps Engineer (Full-Time)}{Coditas Solutions LLP}{Jan 2025 -- Present}
     \resumeItemListStart
-      \item Built production CI/CD pipelines using Jenkins \& GitHub Actions, reducing deployment time by \textbf{40\%} across 15+ microservices; automated infrastructure provisioning \& operational tasks using Python/Bash scripts.
-      \item Architected multi-environment AWS infrastructure using Terraform with custom reusable modules, S3 remote backend, and DynamoDB state locking.
-      \item Deployed \& maintained containerized services on ECS Fargate with auto-scaling, ALB load balancing, CloudWatch monitoring/alerting; implemented Docker \& Podman containerization strategies.
+      \item \textbf{Internal Developer Platform}: Architected and built a self-service internal developer platform from scratch serving 10 products across dev/UAT/prod; parses YAML infra configs, detects changes via \texttt{yq} diffing, triggers GitHub-gated approvals, and dispatches Terraform provisioning (with Trivy scanning and plan validation) to AWS or on-prem Docker targets -- eliminating ad-hoc infrastructure requests entirely.
+      \item \textbf{Unified Container Strategy}: Standardized containerization using a Lambda Adapter pattern so identical Docker images run unmodified on both AWS Lambda and on-prem Docker hosts; eliminated per-stack entrypoint scripts and duplicate image maintenance across 10+ services.
+      \item \textbf{Cost Optimization}: Reduced monthly AWS spend by -33\% (\$2,100 $\rightarrow$ \$1,400) by migrating scheduled workloads from EC2 to Lambda and removing orphaned resources; implemented cost-allocation tagging across all projects and environments, enabling per-project cost visibility as additional products were onboarded onto the platform.
+      \item \textbf{On-Prem Ops \& Disaster Recovery}: Manage 3 Linux on-prem servers hosting 10+ Dockerized non-prod services, with automated Nginx config generation and port allocation removing manual edits during onboarding. Built an automated daily PostgreSQL backup pipeline (\texttt{pg\_dump}, 3x retry, failure alerting, rsync to S3, last-5 retention) and authored/tested a disaster recovery plan.
+      \item \textbf{Restricted-Environment Deployment Automation}: Designed a custom shell-based deployment framework for an enterprise client environment with no CI/CD platform and proxy-only connectivity; cut deployment time by 83\% (20--30 min $\rightarrow$ 4--5 min across 4 servers), eliminated recurring human-error incidents, and introduced artifact-based rollback with sub-second recovery -- replacing a process with zero prior automation.
+    \resumeItemListEnd
+
+\resumeWorkHeading
+    {Associate DevOps Engineer (Intern)}{Coditas Solutions LLP}{Jul 2024 -- Dec 2024}
+    \resumeItemListStart
+      \item Onboarded into AWS infrastructure, containerization, IaC, and CI/CD tooling; assumed full production DevOps responsibilities from December 2024.
     \resumeItemListEnd
 
   \resumeWorkHeading
     {Cloud Computing Intern}{KasNet Technologies Pvt. Ltd.}{Dec 2023 -- Feb 2024}
     \resumeItemListStart
-      \item Optimized Azure SQL performance \& storage efficiency by 20\%; developed Power BI dashboards for real-time analytics.
+      \item Optimized Azure SQL query performance and storage configuration, achieving a 20\% improvement in query efficiency; built Power BI dashboards for operational analytics.
     \resumeItemListEnd
+
 \resumeSubHeadingListEnd
 
 %-----------SKILLS-----------------
 \section{Technical Skills}
 \resumeSubHeadingListStart
-  \item \small \textbf{DevOps \& Cloud:} AWS (IAM, EC2, ECS, Fargate, Lambda, R53, VPC, KMS, CloudWatch), Azure, GCP, Linux
-  \item \small \textbf{CI/CD \& IaC:} Jenkins, GitHub Actions, Terraform, Docker, Podman, Kubernetes, Git, Bash
-  \item \small \textbf{Programming:} Python, JavaScript, SQL, MongoDB, Solidity
-  \item \small \textbf{AI/ML:} PyTorch, Scikit-learn, Pandas, NumPy, FastAPI, MLflow
+  \item \small \textbf{Cloud Platforms:} AWS (IAM, EC2, ECS Fargate, Lambda, API Gateway, CloudFront, S3, RDS, Route53, ACM, KMS, CloudWatch, Cost Explorer), Microsoft Azure
+
+  \item \small \textbf{Infrastructure as Code \& CI/CD:} Terraform, GitHub Actions, Jenkins
+
+  \item \small \textbf{Containers \& Runtime:} Docker, Podman, AWS Lambda Adapter
+
+  \item \small \textbf{Web Servers \& Reverse Proxy:} Nginx, Apache HTTP Server (httpd)
+
+  \item \small \textbf{Programming \& Scripting:} Python, Bash
+
+  \item \small \textbf{Databases \& Storage:} PostgreSQL, MongoDB, Amazon S3
+
+  \item \small \textbf{Operating Systems:} Linux
+
+  \item \small \textbf{DevOps Practices:} GitOps, RBAC Design, Cost Optimization, Disaster Recovery Planning, Backup Automation
 \resumeSubHeadingListEnd
 
-%-----------PROJECTS-----------------
-\section{Projects}
+%-----------CERTIFICATIONS-----------------
+\section{Certifications}
 \resumeSubHeadingListStart
-  \resumeProjectHeading
-    {Multi-Environment Cloud Infrastructure}{}{\href{https://github.com/LitZeus/terraform-aws-infrastructure}{GitHub}}
-    \resumeItemListStart
-      \item Architected fully automated AWS infrastructure with Terraform modules, S3 backend, DynamoDB locking; achieved 100\% IaC coverage.
-      \item Deployed auto-scaling ECS Fargate microservices with ALB routing, CloudWatch monitoring, \& blue-green deployment strategy.
-      \item Built GitOps pipeline with GitHub Actions featuring Trivy security scanning, automated Terraform validation, \& approval gates.
-    \resumeItemListEnd
-
-  \resumeProjectHeading
-    {Varicose Veins Detection (YOLO)}{AI Medical Imaging Platform}
-    { \href{https://github.com/LitZeus/detect-it}{GitHub} |
-      \href{https://veinwise-ai.vercel.app/}{Live} }
-    \resumeItemListStart
-      \item Built YOLO + EfficientNet hybrid model on 3,000+ annotated images; deployed FastAPI backend with Docker containerization.
-    \resumeItemListEnd
-
-  \resumeProjectHeading
-    {NFTix}{NFT-Based Ticketing Platform}
-    {\href{https://github.com/LitZeus/NFTix}{GitHub}}
-    \resumeItemListStart
-      \item Developed blockchain ticketing platform using Solidity smart contracts \& IPFS for fraud prevention; implemented automated resale with royalty distribution.
-    \resumeItemListEnd
-\resumeSubHeadingListEnd
-
-%-----------CERTIFICATIONS & PUBLICATIONS-----------------
-\section{Certifications \& Publications}
-\resumeSubHeadingListStart
-  \item \small \textbf{Certifications:} AWS Solutions Architect- Associate (Exam Ready) | \href{https://litzeus.github.io/certificates/Azure_certification.pdf}{Microsoft Azure AZ-900} | \href{https://litzeus.github.io/certificates/google-advanced-data-analytics-cert.pdf}{Google Advanced Data Analytics} |
-  \href{https://litzeus.github.io/certificates/Google%20Cybersecurity%20Professional%20Certificate.pdf}{Google Cybersecurity}
-  \item \small \textbf{Publication:} Intelligent Detection of Varicose Veins to Enhance Diagnostic Accuracy via AI-Based Image Analysis: IJARSCT, Vol. 5, Issue 10 (2025). \href{https://www.ijarsct.co.in/Paper27118.pdf}{DOI: 10.48175/IJARSCT-27018}
-  
+  \item \small \href{https://litzeus.github.io/certificates/Azure_certification.pdf}{Microsoft Azure AZ-900} | \href{https://litzeus.github.io/certificates/google-advanced-data-analytics-cert.pdf}{Google Advanced Data Analytics} | \href{https://litzeus.github.io/certificates/Google%20Cybersecurity%20Professional%20Certificate.pdf}{Google Cybersecurity Professional}
 \resumeSubHeadingListEnd
 
 %-----------ACHIEVEMENTS-----------------
 \section{Achievements}
 \resumeSubHeadingListStart
-  \item \small Winner – OKTO Track at UNFOLD 24 Hackathon, Bengaluru (Built \& deployed MVP in 36 hours)
-  \item \small FSAE Electric Racing Team – Core member for powertrain \& control logic development (2024)
+  \item \small Winner -- OKTO Track at UNFOLD 24 Hackathon, Bengaluru (Built \& deployed MVP in 36 hours) \quad $|$ \quad Published: AI-Based Varicose Vein Detection, IJARSCT Vol. 5 (2025)
 \resumeSubHeadingListEnd
 
 \end{document}
